@@ -5,24 +5,22 @@
   --main_color: #1A1A1A;
   --secondary_color: #FF3333;
   --font_color: #FFFFFF;
+  --nav-height: 120px;
+  
+  /* Variabili per i tempi di animazione */
+  --border-transition-time: 0.15s;  /* Tempo per border-radius */
+  --menu-transition-time: 0.35s;    /* Tempo per apertura menu */
 }
 
 * {
 	box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /*overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;*/
-}
-
-/**::-webkit-scrollbar {
-    display: none;
 }
 
 html {
     scroll-behavior: smooth;
-}*/
+}
 
 body {
     margin: 0;
@@ -30,6 +28,13 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol {
@@ -48,6 +53,11 @@ img {
 
 a {
     text-decoration: none;
+}
+
+.contenitore {
+	max-width: 1100px;
+	margin: 0 auto;
 }
 
 .logo_link {
@@ -82,12 +92,31 @@ a {
     line-height: 1;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--font_color);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
 nav {
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    top: 0;
     z-index: 1000;
     background-color: var(--main_color);
     color: var(--font_color);
@@ -96,6 +125,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 24px 126px;
+    
+    transition: border-radius var(--border-transition-time) ease var(--menu-transition-time);
 }
 
 .nav_link ul {
@@ -110,7 +141,8 @@ nav a, footer a {
 
 main {
     flex: 1;
-    padding-top: 130px;
+    padding-top: var(--nav-height);
+    padding-bottom: 40px;
 }
 
 footer {
@@ -160,6 +192,98 @@ footer {
     font-size: 1.5rem;
 }
 
-@media (max-width:600px) {
- 
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 80px;
+    }
+    
+    nav {
+        padding: 16px 24px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-icon {
+        display: flex;
+    }
+    
+    .nav_link {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--main_color);
+        max-height: 0;
+        overflow: hidden;
+        
+        transition: max-height var(--menu-transition-time) ease, 
+                    padding var(--menu-transition-time) ease;
+    }
+    
+    .nav_link ul {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .nav_link ul li {
+        width: 100%;
+    }
+    
+    .nav_link ul li a {
+        display: block;
+        padding: 12px 20px;
+        transition: background-color 0.3s;
+    }
+    
+    .nav_link ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    
+    
+    #menu-toggle:checked + nav {
+        border-radius: 0;
+        
+        transition: border-radius var(--border-transition-time) ease 0s;
+    }
+    
+    #menu-toggle:checked + nav .nav_link {
+        max-height: 500px;
+        padding: 20px 0;
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        
+        transition: max-height var(--menu-transition-time) ease var(--border-transition-time),
+                    padding var(--menu-transition-time) ease var(--border-transition-time);
+    }
+    
+    #menu-toggle:checked + nav .menu-icon span:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 6px);
+    }
+    
+    #menu-toggle:checked + nav .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #menu-toggle:checked + nav .menu-icon span:nth-child(3) {
+        transform: rotate(45deg) translate(-12px, -12px);
+    }
+    
+    main {
+        padding-top: calc(var(--nav-height) + 30px);
+    }
+
+    footer {
+        padding: 30px 24px;
+    }
+    
+    .footer_link {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
 }
