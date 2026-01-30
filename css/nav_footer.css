@@ -318,3 +318,17 @@ footer {
         padding-top: calc(var(--nav-height) + 50px);
     }
 }
+
+@media (min-width: 769px) and (pointer: fine) {
+    /* Specifica per macOS - rileva Retina display tipici dei Mac */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+        .logo_link a::before {
+            margin-bottom: -0.07em;
+        }
+        
+        .logo_link a::after {
+            margin-top: -0.19em;
+        }
+    }
+}
