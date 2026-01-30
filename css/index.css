@@ -38,7 +38,7 @@ main {
   height: 250px;
   border-radius: 25px;
   padding: 20px;
-  transform: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .var1:hover {
