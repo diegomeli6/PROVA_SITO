@@ -32,15 +32,7 @@
         </div>
     </nav>
     <main>
-        <a href="*" class="card var1">
-            <div class="contenuto">
-                <p>Questo è un paragrafo</p>
-                <h1>L'Invasione dei cloni</h1>
-            </div>
-        </a>
-        <div class="card var2">
-            <p>questo è un paragrafo</p>
-        </div>
+        <h1>HOME</h1>
     </main>
     <footer>
         <div class="logo_link">
