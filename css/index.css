@@ -86,7 +86,7 @@ main {
     display: table;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 926px) and (pointer: coarse){
   main {
     flex-direction: column;
     align-items: center;
@@ -95,12 +95,28 @@ main {
   }
 
   .card {
-    width: 350px;
-    height: 250px;
+    width: 80%;
+    height: 25vh;
   }
 
   .card h1 {
-    font-size: 3rem;
+    font-size: 12vw;
   }
 
+  .card p {
+    font-size: 4vw;
+  }
+
+}
+
+@media only screen and (orientation: landscape) and (max-width: 926px) and (pointer: coarse) {
+  
+  
+  .card {
+    height: 40vw;
+  }
+
+  .card p {
+    font-size: 3.5vw;
+  }
 }

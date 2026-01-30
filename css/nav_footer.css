@@ -192,19 +192,27 @@ footer {
     font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 926px) and (pointer: coarse){
     :root {
         --nav-height: 80px;
     }
     
     nav {
-        padding: 16px 24px;
+        padding: 18px 24px;
     }
-    
-    .logo h1 {
-        font-size: 2rem;
+
+    .logo_link a::before {
+        content: '';
+        margin-bottom: -0.06em;
+        display: table;
     }
-    
+
+    .logo_link a::after {
+        content: '';
+        margin-top: -0.18em;
+        display: table;
+    }
+        
     .menu-icon {
         display: flex;
     }
@@ -285,5 +293,28 @@ footer {
         flex-direction: column;
         gap: 30px;
         text-align: center;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 926px) and (pointer: coarse) {
+
+    .logo_link a::before {
+        content: '';
+        margin-bottom: -0.06em;
+        display: table;
+    }
+
+    .logo_link a::after {
+        content: '';
+        margin-top: -0.18em;
+        display: table;
+    }
+
+    nav{
+        padding: 24px 20px;
+    }
+
+    main {
+        padding-top: calc(var(--nav-height) + 50px);
     }
 }
