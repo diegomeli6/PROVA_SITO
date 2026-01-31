@@ -197,7 +197,7 @@ footer {
     font-size: 1.5rem;
 }
 
-@media (max-width: 926px) and (pointer: coarse){
+@media (max-width: 926px) {
     :root {
         --nav-height: 80px;
     }
@@ -301,7 +301,7 @@ footer {
     }
 }
 
-@media only screen and (orientation: landscape) and (max-width: 926px) and (pointer: coarse) {
+@media only screen and (orientation: landscape) and (max-width: 926px) {
 
     .logo_link a::before {
         content: '';
