@@ -274,9 +274,9 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 710px) {
   .card h1 {
-    font-size: 11vw;
+    font-size: 10vw;
   }
 
   .hero h1 {
