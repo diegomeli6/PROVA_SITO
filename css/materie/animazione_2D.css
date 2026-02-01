@@ -73,7 +73,7 @@ main {
 iframe {
     width: 85%;
     aspect-ratio: 16 / 9;
-    margin-top: -41px;
+    /*margin-top: -41px;*/
     margin-bottom: 30px;
 }
 
@@ -81,7 +81,7 @@ iframe {
     iframe {
         width: 105%;
         aspect-ratio: 16 / 9;
-        margin-top: -41px;
+        /*margin-top: -41px;*/
         margin-bottom: 0;
     }
 
@@ -136,7 +136,7 @@ iframe {
     iframe {
         width: 105%;
         aspect-ratio: 16 / 9;
-        margin-top: -21px;
+        /*margin-top: -21px;*/
         margin-bottom: 0;
     }
 
@@ -191,7 +191,7 @@ iframe {
         iframe {
         width: 105%;
         aspect-ratio: 16 / 9;
-        margin-top: -29px;
+        /*margin-top: -29px;*/
         margin-bottom: 0;
     }
 
@@ -239,5 +239,22 @@ iframe {
     .scheda_tecnica p {
         font-weight: bold;
         font-style: italic;
+    }
+}
+
+@media (min-width: 769px) and (pointer: fine) {
+    /* Specifica per macOS - rileva Retina display tipici dei Mac */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .descrizione p{
+            font-size: 1.5vw;
+        }
+
+        .descrizione ul {
+            font-size: 1.5vw;
+        }
+
+        .scheda_tecnica {
+            font-size: 1vw;
+        }
     }
 }
