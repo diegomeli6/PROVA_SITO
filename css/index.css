@@ -93,6 +93,13 @@ body {
   justify-content: space-between;
 }
 
+.logo_future_vibes {
+  object-fit: contain;
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+}
+
 .card_materie .card:nth-child(1) {  /*HERO*/
   grid-column: 1 / 13;
   grid-row: 1 / 2;
