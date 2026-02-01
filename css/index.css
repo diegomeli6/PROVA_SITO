@@ -80,6 +80,19 @@ body {
   color: var(--main_color);
 }
 
+.var3 {
+  background-color: black;
+  color: #BBD152;
+  display: flex;
+  flex-direction: row;
+}
+
+.future_vibes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .card_materie .card:nth-child(1) {  /*HERO*/
   grid-column: 1 / 13;
   grid-row: 1 / 2;
@@ -140,12 +153,21 @@ body {
   grid-row: 5 / 6;
 }
 
+.card_materie .card:nth-child(13) {
+  grid-column: 1 / 13;
+  grid-row: 6 / 7;
+}
+
 .var1:hover {
   box-shadow: 0px 0px 30px var(--secondary_color);
 }
 
 .var2:hover {
   box-shadow: 0px 0px 30px var(--main_color);
+}
+
+.var3:hover {
+    box-shadow: 0px 0px 30px #BBD152;
 }
 
 .contenuto {
